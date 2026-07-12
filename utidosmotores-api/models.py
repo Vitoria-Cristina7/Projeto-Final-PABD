@@ -4,7 +4,7 @@ from database import Base
 
 
 class Usuario(Base):
-    _tablename_ = "usuarios"
+    __tablename__ = "usuarios"
     id: Mapped[int] = mapped_column(primary_key=True)
     username: Mapped[str] = mapped_column(unique=True)
     email: Mapped[str] = mapped_column(unique=True)
@@ -14,7 +14,7 @@ class Usuario(Base):
 
 
 class Cliente(Base):
-    _tablename_ = "clientes"
+    __tablename__ = "clientes"
     id: Mapped[int] = mapped_column(primary_key=True)
     nome: Mapped[str]
     telefone: Mapped[str]
@@ -24,7 +24,7 @@ class Cliente(Base):
 
 
 class Veiculo(Base):
-    _tablename_ = "veiculos"
+    __tablename__ = "veiculos"
     id: Mapped[int] = mapped_column(primary_key=True)
     placa: Mapped[str] = mapped_column(unique=True)
     modelo: Mapped[str]
@@ -36,7 +36,7 @@ class Veiculo(Base):
 
 
 class OrdemServico(Base):
-    _tablename_ = "ordens_servico"
+    __tablename__ = "ordens_servico"
     id: Mapped[int] = mapped_column(primary_key=True)
     problema: Mapped[str]
     status: Mapped[str] = mapped_column(default="aberta")
