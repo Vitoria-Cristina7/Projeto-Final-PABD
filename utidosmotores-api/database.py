@@ -16,5 +16,4 @@ engine = create_async_engine(DATABASE_URL)
 class Base(DeclarativeBase): ...
 
 async def get_db_connection():
-    async with AsyncSession(engine, expire_on_commit=False) as session:
-        yield session
+    return AsyncSession(engine, expire_on_commit=False)
